@@ -6,7 +6,7 @@ export const Error = () => {
             <div className="exception-panel"></div>
 
             <div className="exception-content">
-                <img src="assets/layout/images/logo-black.png" alt="babylon-layout" />
+                <img src="assets/layout/images/thanos5.png" alt="babylon-layout" />
                 <h1>
                     <span className="exception-name">ERROR</span> OCCURRED
                 </h1>

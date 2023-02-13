@@ -48,11 +48,11 @@ const AppConfig = (props) => {
         let menuLogo = document.getElementById('layout-menu-logo');
 
         if (value.localeCompare('yellow') === 0 || value.localeCompare('lime') === 0) {
-            topbarLogo.src = 'assets/layout/images/logo-black.png';
-            menuLogo.src = 'assets/layout/images/logo-black.png';
+            topbarLogo.src = 'assets/layout/images/thanos5.png';
+            menuLogo.src = 'assets/layout/images/thanos5.png';
         } else {
-            topbarLogo.src = 'assets/layout/images/logo-white.png';
-            menuLogo.src = 'assets/layout/images/logo-white.png';
+            topbarLogo.src = 'assets/layout/images/thanos5.png';
+            menuLogo.src = 'assets/layout/images/thanos5.png';
         }
     };
 

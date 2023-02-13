@@ -1,6 +1,6 @@
 import React from 'react';
 import { classNames } from 'primereact/utils';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AppTopbar = (props) => {
     const navigate = useNavigate();
@@ -15,7 +15,8 @@ const AppTopbar = (props) => {
     return (
         <div className="layout-topbar">
             <button className="layout-topbar-logo p-link" onClick={() => navigate('/')}>
-                <img id="layout-topbar-logo" src="assets/layout/images/logo-white.png" alt="babylon-layout" />
+                <img id="layout-topbar-logo" src="assets/layout/images/thanos5.png" alt="babylon-layout" />
+                
             </button>
 
             <button className="layout-menu-button p-link" onClick={props.onMenuButtonClick}>
@@ -31,34 +32,37 @@ const AppTopbar = (props) => {
                     <li className={profileItemClassName}>
                         <button className="p-link" onClick={(e) => props.onTopbarItemClick(e, 'profile')}>
                             <img alt="babylon-layout" src="assets/layout/images/avatar.png" />
-                            <span className="topbar-item-name">Arlene Welch</span>
+                            <span className="topbar-item-name">Mitch T Severa</span>
                         </button>
 
                         <ul className={classNames({ fadeInDown: !props.isMobile() })}>
-                            <li role="menuitem">
-                                <button className="p-link">
-                                    <i className="pi pi-user"></i>
-                                    <span>Profile</span>
-                                </button>
-                            </li>
-                            <li role="menuitem">
-                                <button className="p-link">
-                                    <i className="pi pi-cog"></i>
-                                    <span>Settings</span>
-                                </button>
-                            </li>
-                            <li role="menuitem">
-                                <button className="p-link">
-                                    <i className="pi pi-envelope"></i>
-                                    <span>Message</span>
-                                </button>
-                            </li>
-                            <li role="menuitem">
-                                <button className="p-link">
-                                    <i className="pi pi-bell"></i>
-                                    <span>Notifications</span>
-                                </button>
-                            </li>
+                           
+                            <Link to={`/profile`}>
+                                <li role="menuitem">
+                                    <button className="p-link">
+                                        <i className="pi pi-user"></i>
+                                        <span>Profile</span>
+                                    </button>
+                                </li>
+                            </Link>
+                          
+                            <Link to={`/settings`}>
+                                <li role="menuitem">
+                                    <button className="p-link">
+                                        <i className="pi pi-cog"></i>
+                                        <span>Settings</span>
+                                    </button>
+                                </li>
+                            </Link>
+
+                           <Link to={`/login`}>
+                                <li role="menuitem">
+                                    <button className="p-link">
+                                        <i className="pi pi-sign-out"></i>
+                                        <span>Logout</span>
+                                    </button>
+                                </li>
+                           </Link>
                         </ul>
                     </li>
                 )}

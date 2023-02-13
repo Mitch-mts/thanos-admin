@@ -41,6 +41,10 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import './App.scss';
+import Profile from './thanos/Profile';
+import Settings from './thanos/Settings';
+import UserAccounts from './thanos/useraccounts/UserAccounts';
+import AddUser from './thanos/useraccounts/AddUser';
 
 const App = () => {
     const [menuActive, setMenuActive] = useState(false);
@@ -94,7 +98,13 @@ const App = () => {
         { path: '/timeline', parent: 'Pages', label: 'Timeline' },
         { path: '/invoice', parent: 'Pages', label: 'Invoice' },
         { path: '/help', parent: 'Pages', label: 'Help' },
-        { path: '/empty', parent: 'Pages', label: 'Empty Page' }
+        { path: '/empty', parent: 'Pages', label: 'Empty Page' },
+
+        { path: '/profile', parent: 'thanos', label: 'Profile' },
+        { path: '/settings', parent: 'thanos', label: 'Settings' },
+        { path: '/user-accounts', parent: 'thanos/useraccounts', label: 'User Accounts' },
+        { path: '/add-user-accounts', parent: 'thanos/useraccounts', label: 'Add User Accounts' }
+
     ];
 
     const menu = [
@@ -102,6 +112,16 @@ const App = () => {
             label: 'Home Page',
             icon: 'pi pi-fw pi-home',
             items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
+        },
+        {
+            label: 'Realm Of Thanos',
+            icon: 'pi pi-fw pi-globe',
+            items: [
+                { label: 'User Accounts', icon: 'pi pi-fw pi-users', to: '/user-accounts' },
+                { label: 'Residence', icon: 'pi pi-fw pi-home', to: '/notfound' },
+                { label: 'Hotels', icon: 'pi pi-fw pi-building', to: '/notfound' }
+               
+            ]
         },
         {
             label: 'UI Kit',
@@ -428,7 +448,7 @@ const App = () => {
             <div className={menuContainerClassName} onClick={onMenuClick}>
                 <div className="layout-menu-logo">
                     <button className="p-link" onClick={() => navigate('/')}>
-                        <img id="layout-menu-logo" src="assets/layout/images/logo-white.png" library="babylon-layout" alt="babylon-logo" />
+                        <img id="layout-menu-logo" src="assets/layout/images/thanos5.png" library="babylon-layout" alt="babylon-logo" />
                     </button>
                 </div>
                 <div className="layout-menu-wrapper">
@@ -469,6 +489,11 @@ const App = () => {
                         <Route path="/invoice" element={<Invoice />} />
                         <Route path="/help" element={<Help />} />
                         <Route path="/empty" element={<EmptyPage />} />
+
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/user-accounts" element={<UserAccounts />} />
+                        <Route path="/add-user-accounts" element={<AddUser />} />
                     </Routes>
                 </div>
 
