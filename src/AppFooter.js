@@ -11,13 +11,7 @@ const AppFooter = () => {
                 </div>
                 <div className="col-6 footer-icons">
                     <button type="button" className="p-link">
-                        <i className="pi pi-home"></i>
-                    </button>
-                    <button type="button" className="p-link">
-                        <i className="pi pi-globe"></i>
-                    </button>
-                    <button type="button" className="p-link">
-                        <i className="pi pi-envelope"></i>
+                        &copy; {1900 + new Date().getYear()}, Designed with &#128149; by BigMitch Innovation
                     </button>
                 </div>
             </div>

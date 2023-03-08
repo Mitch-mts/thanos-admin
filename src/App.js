@@ -45,6 +45,8 @@ import Profile from './thanos/Profile';
 import Settings from './thanos/Settings';
 import UserAccounts from './thanos/useraccounts/UserAccounts';
 import AddUser from './thanos/useraccounts/AddUser';
+import Got from './thanos/Got';
+import GotCharacter from './thanos/GotCharacter';
 
 const App = () => {
     const [menuActive, setMenuActive] = useState(false);
@@ -103,7 +105,9 @@ const App = () => {
         { path: '/profile', parent: 'thanos', label: 'Profile' },
         { path: '/settings', parent: 'thanos', label: 'Settings' },
         { path: '/user-accounts', parent: 'thanos/useraccounts', label: 'User Accounts' },
-        { path: '/add-user-accounts', parent: 'thanos/useraccounts', label: 'Add User Accounts' }
+        { path: '/add-user-accounts', parent: 'thanos/useraccounts', label: 'Add User Accounts' },
+        { path: '/game-of-thrones', parent: 'thanos', label: 'Game Of Thrones' },
+        // { path: '/game-of-thrones-character', parent: 'thanos', label: 'Game Of Thrones Character' }
 
     ];
 
@@ -119,7 +123,8 @@ const App = () => {
             items: [
                 { label: 'User Accounts', icon: 'pi pi-fw pi-users', to: '/user-accounts' },
                 { label: 'Residence', icon: 'pi pi-fw pi-home', to: '/notfound' },
-                { label: 'Hotels', icon: 'pi pi-fw pi-building', to: '/notfound' }
+                { label: 'Hotels', icon: 'pi pi-fw pi-building', to: '/notfound' },
+                { label: 'GOT', icon: 'pi pi-fw pi-shield', to: '/game-of-thrones' }
                
             ]
         },
@@ -494,6 +499,8 @@ const App = () => {
                         <Route path="/settings" element={<Settings />} />
                         <Route path="/user-accounts" element={<UserAccounts />} />
                         <Route path="/add-user-accounts" element={<AddUser />} />
+                        <Route path="/game-of-thrones" element={<Got />} />
+                        {/* <Route path="/game-of-thrones-characters" element={<GotCharacter/>} /> */}
                     </Routes>
                 </div>
 
